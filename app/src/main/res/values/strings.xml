@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SmsReceiver</string>
+    <string name="add_msg">Add Message</string>
+    <string name="hint_msg">Message...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Message not saved because it is empty</string>
+    <string name="error_code">Error 400 for message: </string>
+    <string name="connect_error">TestConnection successful but send got error</string>
+    <string name="network_error">Network Not Available</string>
+
+</resources>
