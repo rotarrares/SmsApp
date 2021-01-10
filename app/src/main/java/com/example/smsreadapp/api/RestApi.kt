@@ -14,6 +14,8 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("post-test")
     fun addSms(@Body smsData: SmsInfo): Call<SmsInfo>
+    @POST("delete-test")
+    fun deleteSms(@Body smsData: SmsInfo): Call<SmsInfo>
     @GET("healthcheck")
     fun testConnection(): Call<SmsInfo>
     @GET( "phones")

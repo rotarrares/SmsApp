@@ -7,8 +7,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -17,14 +15,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smsreadapp.api.RestApiService
 import com.example.smsreadapp.msg.MsgListAdapter
 import com.example.smsreadapp.msg.MsgViewModel
 import com.example.smsreadapp.repo.Msg
 import com.example.smsreadapp.service.SendingService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
-import kotlinx.android.synthetic.main.error_toast.*;
 class MainActivity : AppCompatActivity() {
 
     private val requestReceiveSms = 2

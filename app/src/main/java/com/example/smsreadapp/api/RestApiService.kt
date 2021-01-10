@@ -24,12 +24,27 @@ class RestApiService {
         )
     }
 
+    fun deleteSms(smsData: SmsInfo, onResult: (Int?) -> Unit){
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.deleteSms(smsData).enqueue(
+            object : Callback<SmsInfo> {
+                override fun onFailure(call: Call<SmsInfo>, t: Throwable) {
+                    onResult(null)
+                }
+                override fun onResponse(call: Call<SmsInfo>, response: Response<SmsInfo>) {
+
+                    onResult(response.code())
+                }
+            }
+        )
+    }
+
     fun testConnection( onResult: (String?) -> Unit){
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.testConnection().enqueue(
             object : Callback<SmsInfo> {
                 override fun onFailure(call: Call<SmsInfo>, t: Throwable) {
-                    onResult(call.toString())
+                    onResult(t.toString())
                 }
                 override fun onResponse(call: Call<SmsInfo>, response: Response<SmsInfo>) {
                     val result = response.code()

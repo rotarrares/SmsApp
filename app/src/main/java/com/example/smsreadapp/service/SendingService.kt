@@ -59,9 +59,9 @@ class SendingService() {
                                 apiService.addSms(smsInfo,onResult = {
                                     val response = it
                                     if (response == 200) {
-                                        scope.launch {repository.delete(msgObject)}
+                                        //scope.launch {repository.delete(msgObject)}
                                     } else {
-                                        if(response == 400){
+                                        /*if(response == 400){
                                             val errorCode = "Error 400: ".plus(msgObject.message)
                                             Toast.makeText(
                                                 context,
@@ -74,7 +74,7 @@ class SendingService() {
                                                 R.string.connect_error,
                                                 Toast.LENGTH_LONG
                                             ).show()
-                                        }
+                                        }*/
                                     }
                                 })
                             }

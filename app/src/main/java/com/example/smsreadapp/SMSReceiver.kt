@@ -3,30 +3,17 @@ package com.example.smsreadapp
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import android.os.Build
-import android.provider.SyncStateContract
 import android.telephony.SmsMessage
-import android.util.Log
-import android.util.Log.e
 import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
 import com.example.smsreadapp.api.RestApiService
 import com.example.smsreadapp.api.SmsInfo
 import com.example.smsreadapp.repo.AppDatabase
 import com.example.smsreadapp.repo.Msg
 import com.example.smsreadapp.repo.Repository
-import com.google.gson.annotations.SerializedName
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
 import java.text.SimpleDateFormat
-import java.util.logging.Logger
 
 
 class SMSReceiver : BroadcastReceiver() {

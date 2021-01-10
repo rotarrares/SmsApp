@@ -12,7 +12,7 @@ object ServiceBuilder {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://smsaur.vercel.app") // change this IP for testing by your actual machine IP
+        .baseUrl("http://10.0.2.2:3000/") // change this IP for testing by your actual machine IP
         .addConverterFactory(NullOnEmptyConverterFactory())
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
